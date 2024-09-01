@@ -16,3 +16,22 @@ console.log(typeof scoreInNumber);
 // 1=> true ; 0 => false
 //  "" => false
 
+// *********** Operations ***********
+
+console.log("1" + 2); //12
+console.log(1 + "2"); //12
+console.log("1" + 2 + 2); //122
+console.log(1 + 2 + "2"); //132
+
+console.log(+true); //1
+console.log(+""); // 0
+
+// Increment Operator
+
+// x++ {PostFix Operator} 
+//  Returns the value before Incrementing
+
+// ++x {PreFix Operator}
+//  Returns the value after Incrementing
+
+
