@@ -26,3 +26,10 @@ console.log(Object.values(tinderUser));
 
 // console.log(Object.entries(tinderUser));
 
+
+// Object destruction:
+
+const {name: naam} = tinderUser // Now i can use just name or naam rather then using tinderUser.name!!
+
+console.log(naam);
+
