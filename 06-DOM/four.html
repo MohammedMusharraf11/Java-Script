@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: beige;">
+    <ul class="language">
+            <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName) {
+        const li =document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    addLang("Python") // This is not optimized!!
+    addLang("Cpp")
+    
+    function addOptimizedLang(langName){
+        const li =document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptimizedLang("Rust")
+
+    // EDIT
+
+    // We can explicitly edit
+    const secondLnag = document.querySelector("li:nth-child(2)")
+    secondLnag.innerHTML = "TypeScript"
+
+    // We can replace 
+    const newlang = document.createElement('li')
+    newlang.textContent = "MOJO"
+    secondLnag.replaceWith(newlang)
+
+    // Remove 
+    const lastLnag = document.querySelector("li:last-child")
+    lastLnag.remove()
+
+</script>
+</html>
