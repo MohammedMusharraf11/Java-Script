@@ -2,7 +2,7 @@
 // Arrays are reuseable
 
 const myArr = [10,4,2,3,91,5]
-
+// 
 const newArr = new Array(1,2,3,4,5)
 
 // Array Methods:

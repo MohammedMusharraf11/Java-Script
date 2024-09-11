@@ -3,7 +3,7 @@
 // Object Literals
 
 const mysym = Symbol("key1")
-
+// 
 const Jsuser = {
     name:"Abraham",
     age: 18,
