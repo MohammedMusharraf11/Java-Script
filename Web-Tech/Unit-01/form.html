@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Form for Checkbox  [Multiple Options can be ticked for same name attr] -->
+    <form >
+        <p>
+            <input type="checkbox" name="item" value="Milk"> 
+            Milk
+            <input type="checkbox" name="item"  value="Ghee"> 
+            Ghee
+        </p>
+    </form>
+    <!-- Form for radio [Single option can be selected for same attr] -->
+    <form>
+        <label>
+          <input type="radio" name="gender" value="male"> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female"> Female
+        </label>
+
+    </form>
+<br>
+<br>
+    <form>
+        <select name="country"> 
+            <!-- Default you can select only one value -->
+            <option value="india">India</option>
+            <option value="pakistan">Pakistan</option>
+            <option value="srilanka">SriLanka</option>
+        </select>
+        <br>
+        <br>
+        <!-- FORM where uh can select multiple options USE ctrl to select -->
+        <select name="skills" multiple="multiple" multiple size="2" >
+            <option value="cpp">C++</option>
+            <option value="full-stack">Full Stack</option>
+            <option value="devops">Devops</option>
+            <option value="cybersecurity">Cyber-Sec</option>
+            <option value="machine-learning">Machine Learning</option>
+        </select>
+    </form>    
+    <br>
+    <br>
+
+    <form>
+        <textarea name="feedback" id="" cols="30" rows="10">
+            Please provide your valuable feedback
+        </textarea>
+    </form>
+
+    <p>This is form with Submit and Reset button</p>
+
+    <form>
+        <p>
+            <input type="checkbox" name="item" value="Milk"> 
+            Milk
+            <input type="checkbox" name="item"  value="Ghee"> 
+            Ghee
+        </p>
+            <!-- No need to add Submit and Reset labels as this buttons are self -explanatory -->
+            <input type="submit">
+            <input type="reset">
+  
+        
+    </form>
+    
+</body>
+</html>
