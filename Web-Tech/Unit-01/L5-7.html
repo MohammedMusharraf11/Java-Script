@@ -3,49 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L6&7&8-CSS 3.0 Styles and stylesheets</title>
+    <title>L6&7&8-CSS 3.0 Styles and Stylesheets</title>
 </head>
 <style>
+    span {
+        background-color: aqua;
+        color: gold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
 
+    span#top {
+        background-color: red;
+    }
 
-span{
-    background-color: aqua;
-    color: gold ;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    a {
+        color: gold;
+        text-decoration: none;
+    }
 
-span#top{
-    background-color: red;
-}
-
-div.items a{
-    color: yellow;
-    
-}
-
-
+    a:hover {
+        color: red;
+        text-decoration: underline;
+    }
 </style>
 <body style="background-color: black; color: beige;">
-    <span id="top">
-        Here is a span with text
-    </span>
-    <p>
-        Here is a paragraph's text
-    </p>
-    <span>
-        Here is a span with text
-    </span>
+    <span id="top">Here is a span with text</span>
+    <p>Here is a paragraph's text</p>
+    <span>Here is a span with text</span>
 
     <div class="items">
         <a href="#">Item1</a>
         <a href="#">Item2</a>
         <a href="#">Item3</a>
         <ul>
-    
-    <li><a href="#">Item1</a></li>
-    <li>   <a href="#">Item2</a></li> 
-    <li><a href="#">Item3</a></li>
-            </li>
+            <li><a href="#">Item1</a></li>
+            <li><a href="#">Item2</a></li>
+            <li><a href="#">Item3</a></li>
         </ul>
     </div>
 </body>
