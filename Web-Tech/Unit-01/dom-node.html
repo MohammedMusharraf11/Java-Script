@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Parent Node</title>
+</head>
+<body>
+    <div id="main">
+            <div class="elder"></div>
+            <p class="note">This is a note!!</p>    
+            <p class="now">Habibi</p>        
+    </div>
+    <script>
+        let x = document.querySelector('.note');
+        console.log(x.parentNode); // main
+        console.log(x.nextElementSibling); // now
+        console.log(x.previousElementSibling); // elder
+        
+        let node = document.querySelector("#main")
+        console.log(node.firstElementChild); // elder
+        console.log(node.lastElementChild); // now
+        console.log(node.childNodes); // elder note now
+        x.innerHTML = "This is the new HTML note text!";
+        
+        
+    </script>
+</body>
+</html>
