@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  
+</head>
+<body>
+    <progress value="90" max="100" ></progress>
+    <br>
+    <br>
+    <canvas width="120" height="60"></canvas>
+    <script>
+        let can = document.querySelector("canvas");
+        let cont = can.getContext("2d")
+        cont.fillStyle = "red"
+        cont.fillRect(50,50,100,50);
+    </script>
+</body>
+</html>

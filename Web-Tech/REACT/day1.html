@@ -7,18 +7,84 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+
     <div id="container"></div>
-    <script type="text/babel">
-        var destination = document.querySelector("#container");
-        const root = ReactDOM.createRoot(destination);
-        
-        class HelloWorld extends React.Component {
-            render() {
-                return <h2>Hello Namaste</h2>;
-            }
-        }
-        
-        root.render(<HelloWorld />);
-    </script>
+		
+
+
+        <script type="text/babel" >
+                class HelloWorld extends React.Component {
+                    render(){
+                        return <h1> Hello {this.props.greet} </h1>;
+                    }
+                }
+
+                const root = ReactDOM.createRoot(document.querySelector("#container"));
+                root.render(
+                <div>
+                    <HelloWorld greet="Musharraf"/>
+                   
+                    </div>
+                );
+
+
+                class Car extends React.Component{
+                    render(){
+                        return <h2 style = {{backgroundColor: "lightblue"}}> I am a Red Car!! </h2>
+                    }
+                }
+                root.render(
+                    <Car/>
+                )
+        </script>
+
+
+
+            <form action="/submit">
+
+
+                    <label for="name">Enter your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+                    <br>
+                    <label for="id">Enter your Email Id:</label>
+                    <input type="email" id="mail" name="mail" required>
+                    <br>
+                    <br>
+                    <label>Gender
+                        <label>
+                            <input type="radio" name="Gender" value="male"> Male
+                        </label>
+                        <label>
+                            <input type="radio" name="Gender" value="female"> Female
+                        </label>
+                    </label>
+                    
+                <br>
+                <br>
+                <label for="country">Select Country</label>
+                <select name="country" id="country">
+                    <option value="in">India</option>
+                    <option value="pak">Pakistan</option>
+                </select>
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </form>
 </body>
 </html>

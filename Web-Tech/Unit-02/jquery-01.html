@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+    <script>
+        $(document).ready(function (){
+            $("p").click(function (){
+                $(this).hide();
+            })
+        });
+
+        $(document).ready(function (){
+            $("#button1").click(function (){
+                $("p").hide();
+            });
+        });
+
+
+        $(document).ready(function (){
+            $("#hide").click(function (){
+                $("li").hide();
+            });
+        });
+        $(document).ready(function (){
+            $("#show").click(function (){
+                $("li").show(5000);
+            });
+        });
+    </script>
+
+
+
+
+</head>
+<body style="background-color: black; color: beige;">
+    <p>Paragraph one</p>
+    <p>Paragraph Two</p>
+    <br>
+    <br>
+    <button id="button1">Click Here</button>
+
+    <p> Subjects</p>
+		<ul>
+			<li> Data Structures</li>
+			<li id="g1">Web Technologies </li>
+			<li> Data Science</li>
+			<li> DDCO</li>
+		</ul>
+		<button id="hide"> Click button to hide all list elements</button>
+		<button id="show"> Click button to show all list elements</button>
+        <div>
+            <button id="add">Add-Subject</button>
+        </div>
+        <br>
+
+        <div>
+            <button id="del">Add-Subject</button>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+                $("#add").click(function(){
+                    $("ul").append('<li>AIML</li>');
+                });
+
+                $('#del').click(function (){
+                    $("li").first().remove();
+                });
+            }
+
+            )
+        </script>
+</body>
+</html>

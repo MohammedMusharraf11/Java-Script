@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Example</title>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <h1>Geolocation Information</h1>
+    <p id="location">Waiting for location...</p>
+
+    <script>
+        function getpos(){
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(show, handleError);
+            } else {
+                document.getElementById('location').innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function show(position) {
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            document.getElementById('location').innerHTML = `Current Position: Latitude ${latitude}, Longitude ${longitude}`;
+        }
+
+        function handleError(error) {
+            let errorMsg = '';
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    errorMsg = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    errorMsg = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    errorMsg = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    errorMsg = "An unknown error occurred.";
+                    break;
+            }
+            document.getElementById('location').innerHTML = errorMsg;
+        }
+
+        // Start fetching the location
+        getpos();
+    </script>
+</body>
+</html>

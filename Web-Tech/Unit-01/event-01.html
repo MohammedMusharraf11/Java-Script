@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.google.com/">Google</a>
+    <button id="btn">Click Me</button>
+    
+    <script>
+        let btn = document.querySelector('#btn')
+        btn.addEventListener('click',function (event){
+            alert("Bro the button was clicked")
+            console.log(event.type);
+            
+        })
+        <a href="https://www.google.com/">Google</a>
+        let link = document.querySelector('a');
+            link.addEventListener('click',function(event) {
+            console.log('clicked');
+            event.preventDefault();
+});
+    </script>
+</body>
+</html>

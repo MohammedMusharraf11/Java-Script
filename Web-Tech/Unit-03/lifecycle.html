@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+
+    class Counter extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { strikes: 0 };
+            this.timerTick = this.timerTick.bind(this);
+        }
+
+        componentDidMount() {
+            setInterval(this.timerTick, 1000);
+            console.log("Component has mounted");
+        }
+
+        timerTick() {
+            this.setState((prevState) => {
+                return {
+                    strikes: prevState.strikes + 10
+                };
+            });
+        }
+        componentDidUpdate(prevProps,prevState){
+            console.log("Component Updated from:");
+
+            if(this.state.strikes ==100){
+                root.unmount();
+            }
+
+            
+        }
+        componentWillUnmont(){
+            console.log("Compnent is Going to be unmounted soon (:");
+            clearInterval(this.timer)
+        }
+
+        render() {
+            return (<div>{this.state.strikes}</div>);
+        }
+    }
+
+    ReactDOM.render(<Counter />, document.getElementById('container'));
+
+    </script>
+</body>
+</html>
