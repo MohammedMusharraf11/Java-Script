@@ -1,0 +1,11 @@
+{
+  "name": "demobackend",
+  "version": "1.0.0",
+  "description": "my first backend app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Mush4rr4f",
+  "license": "ISC"
+}
