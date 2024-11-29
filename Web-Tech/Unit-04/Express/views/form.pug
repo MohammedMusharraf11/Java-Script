@@ -1,0 +1,10 @@
+doctype html
+html
+    head
+        title Form Page
+    body
+        form(method='POST', action='/submit')
+            label(for='name') Name:
+            input(type='text', name='name', id='name', required)
+            br
+            input(type='submit', value='Submit')

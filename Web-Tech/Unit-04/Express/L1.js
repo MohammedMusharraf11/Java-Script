@@ -4,6 +4,10 @@ var express = require('express');
 // Create a root level instance of express
 var app = express();
 
+//  -----------*****----------*****---------- 
+// ROUTE Definition takes the following structure:
+// app.METHOD(PATH,HANDLER)
+
 // Define a route for the root URL
 app.get('/', function(req, res) {
   res.send('Hello World!cdm fzfdddssddd/smx fsseew;r');

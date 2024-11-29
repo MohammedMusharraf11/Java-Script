@@ -1,5 +1,7 @@
 //  Node JS: Is asynchronous and its mono-threaded. Its based on Event-Driven Architecture.
 
+
+
 // Event Emitters
 // An Event Emitter is an object that can emit (or trigger) events. In Node.js, the EventEmitter class from the events module is used to handle events. When an event is emitted, any functions (listeners) that are registered to handle that event are called synchronously.
 
@@ -29,7 +31,7 @@ var list2 = function listener2() {
     console.log('listener 2 executed.');
 }
 
-//  Binding/Subscribing/Raising/Ataching the event with the listener
+//  Binding/Subscribing/Raising/Attaching the event with the listener
 
 eventEmitter.addListener("connection", list1);
 eventEmitter.on("connection", list2);
@@ -49,3 +51,23 @@ eventEmitter.emit("connection");
 
 // Console the number of listeners
 console.log("Listeners after removal: ",eventEmitter.listenerCount("connection"));
+
+
+var newList = function newEvent() {
+    console.log("Bhai sab this is my event ukwwww!!");
+}
+
+eventEmitter.on("RCB", newList);
+eventEmitter.emit("RCB")
+
+
+// const event = require('events');
+
+// const eventEmitter = new event.EventEmitter()
+
+// var bro = function brooo(){
+//     console.log("All indian are my brothers and sisters");
+// }
+
+// eventEmitter.addListener("India", bro);
+// eventEmitter.emit("India")
