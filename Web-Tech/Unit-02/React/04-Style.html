@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>React</title>
+		<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script type="text/babel">
+			// We need to use to {{}} to write stylings
+            // Inline CSS
+            class Car extends React.Component{
+                render(){
+                    return(
+                        <h3 style={{backgroundColor:"lightblue"}}>This is a Car!!</h3>
+                    )
+                }
+                    
+            }
+
+            // 
+            class Letter extends React.Component {
+				render() {
+					var letterStyle = {
+						// backgroundColor: "#ffde00", If uh need to take color while calling
+                        backgroundColor:this.props.bgclr,
+						color: "#333",
+						display: "inline-block",
+						padding: "25px",
+						margin: "25px"
+					};
+					return <div style={letterStyle}>
+						{this.props.children}
+					</div>;
+				}
+			}
+
+            const root = ReactDOM.createRoot(document.querySelector("#container"))
+            root.render(
+                <>
+                <Car/>
+                <Letter bgclr="red">A</Letter>
+                <Letter bgclr="green" >E</Letter>
+                <Letter bgclr="beige" >I</Letter>
+                <Letter bgclr="lightblue" >O</Letter>
+                <Letter bgclr="yellow" >U</Letter>
+
+                </>
+            )
+		</script>
+
+   
+	</body>
+</html>

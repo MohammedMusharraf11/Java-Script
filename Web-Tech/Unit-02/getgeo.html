@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Example</title>
+</head>
+<body>
+    <h1>Geolocation API Demo</h1>
+    <button id="geo" onclick="getLocation()">Click to Know Your Location</button>
+    <p id="output"></p>
+    <button id="watch" onclick="startWatching()">Start Watching Position</button>
+    <button id="stop" onclick="stopWatching()">Stop Watching Position</button>
+    <script>
+        // Function to get the current position of the user
+        function getLocation() {
+            var output = document.getElementById("output");
+
+            // Check if Geolocation is supported
+            if (!navigator.geolocation) {
+                output.textContent = "Geolocation is not supported by your browser.";
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    // Success callback
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    output.innerHTML = `Your position is: <br> Latitude: ${latitude} <br> Longitude: ${longitude}`;
+                },
+                function (error) {
+                    // Error callback
+                    output.textContent = `Unable to retrieve location. Error: ${error.message}`;
+                }
+            );
+        }
+
+        let watchId; // To store the watchPosition ID
+
+        // Function to start watching the position
+        function startWatching() {
+            var output = document.getElementById("output");
+
+            if (!navigator.geolocation) {
+                output.textContent = "Geolocation is not supported by your browser.";
+                return;
+            }
+
+            watchId = navigator.geolocation.watchPosition(
+                function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    output.innerHTML = `Watching position: <br> Latitude: ${latitude} <br> Longitude: ${longitude}`;
+                },
+                function (error) {
+                    output.textContent = `Unable to retrieve location. Error: ${error.message}`;
+                }
+            );
+        }
+
+        // Function to stop watching the position
+        function stopWatching() {
+            if (watchId) {
+                navigator.geolocation.clearWatch(watchId);
+                document.getElementById("output").textContent = "Stopped watching position.";
+                watchId = null;
+            }
+        }
+    </script>
+</body>
+</html>

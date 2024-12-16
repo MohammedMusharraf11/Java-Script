@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Session hai boss!!</title>
+</head>
+<body>
+    <!-- Session -1 -->
+    <div class="example">First Div element</div>
+    <div class="example">Second Div element</div>
+    <p id="demo">Web</p>
+    <button onclick="myfucntion()">Try It</button>
+    <script>
+        document.getElementById("demo").innerHTML = "Hello World"
+        function myfucntion(){
+            var x = document.getElementsByClassName("example");
+            x[0].innerHTML="Wassup Broskkii"
+            x.style.color = "red"
+        }
+    </script>
+
+    <!-- Session -2 -->
+     <ul>
+        <li>WEB Technologies</li>
+        <li>DSA</li>
+     </ul>
+     <button onclick="changeCase()">Click Me</button>
+    <script>
+        function changeCase(){
+        var x = document.querySelector("ul");
+        x.innerText=x.innerText.toLowerCase();
+        // Lets add new Subject
+        newSub = document.createElement("li")
+        newSub.innerText = "DDCO"
+        var ul = document.querySelector("ul");
+        ul.appendChild(newSub)
+        // ul.insertBefore(newSub,ul.firstChild); This adds in the first place
+        
+        }
+    </script>
+    <script>
+        function change(input) {
+    let result = "";
+    for (let char of input) { // Use 'for...of' to iterate over characters
+        if (char === char.toLowerCase()) {
+            result += char.toUpperCase(); // Change to uppercase
+        } else {
+            result += char.toLowerCase(); // Change to lowercase
+        }
+    }
+    return result;
+}
+
+var x = change("HeLlo");
+console.log(x); // Output: "hElLO"
+
+console.log(change("MusHArRaf")); // Output: "mUShArRaF"
+
+    </script>
+
+
+</body>
+</html>

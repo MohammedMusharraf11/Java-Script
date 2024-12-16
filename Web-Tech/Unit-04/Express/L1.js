@@ -16,6 +16,9 @@ app.get('/hello', function(req, res) {
   res.send('Hello World!cdm fzfdddssddd/smx fsseew;r');
 });
 
+app.get('/hi',function(req,res){
+  res.send("<h2>Hello Janab</h2>")
+})
 //  Dynamic Routing
 
 app.get('/:msg', function(req, res) {

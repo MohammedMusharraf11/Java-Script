@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1</title>
+    <script>
+        function loadData(){
+            let xhr = new XMLHttpRequest;
+            xhr.open("GET","sample.json","true")
+            xhr.onreadystatechange = showdata;
+            xhr.responseType = "json";
+            xhr.send();
+        }
+
+        function showdata(){
+            if(this.readyState==4 && this.status==200){
+                // document.querySelector("div").innerHTML = this.response gives object object
+                document.querySelector("div").innerHTML = this.response['srn']
+            }
+        }
+        
+    </script>
+</head>
+<body style="background-color: black; color: beige;">
+    <button onclick="loadData()">Load Data</button>
+    <div>The data is yet to load</div>
+</body>
+</html>

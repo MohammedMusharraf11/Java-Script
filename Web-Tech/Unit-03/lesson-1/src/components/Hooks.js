@@ -12,6 +12,12 @@ const Hooks = () => {
     const increment = () => setCount(count + 1);
     const decrement = () => setCount(count - 1);
 
+    // React.useEffect(() => {
+    //     setTimeout(()=>{
+    //         setCount(count + 1);
+    //     },1000)
+    // });
+    
     return (
         <div>
             <h1>Hooks</h1>

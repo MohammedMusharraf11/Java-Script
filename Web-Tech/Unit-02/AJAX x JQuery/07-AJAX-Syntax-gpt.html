@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Syntax</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>jQuery AJAX Syntax Examples</h1>
+    <div id="container">Content will load here...</div>
+    <button onclick="ajaxExample()">AJAX Example</button>
+
+    <script>
+        // Example: Generic AJAX request with $.ajax()
+        function ajaxExample() {
+            $.ajax({
+                url: 'sample.txt',      // The URL of the resource
+                method: 'GET',                // HTTP method (GET, POST, etc.)
+                data: { key: 'value' },       // Data to send with the request (optional)
+                dataType: 'text',             // Expected response type (e.g., 'json', 'text')
+                success: function (response, status, xhr) {
+                    // Code to run on success
+                    console.log('Success:', response);
+                    $('#container').html(response);
+                },
+                error: function (xhr, status, error) {
+                    // Code to run on error
+                    console.error('Error:', error);
+                },
+                complete: function (xhr, status) {
+                    // Code to run after the request finishes (success or failure)
+                    console.log('Request complete.');
+                }
+            });
+        }
+
+        // Example: GET request with $.get()
+        function getExample() {
+            $.get('sample.txt',        // The URL to request
+                { key: 'value' },           // Data to send with the GET request (optional)
+                function (response) {       // Callback function on success
+                    console.log('GET Response:', response);
+                    $('#container').html(response);
+                },
+                'text'                      // Optional: Expected response type
+            );
+        }
+
+        // Example: POST request with $.post()
+        function postExample() {
+            $.post('submit.php',             // The URL to send the POST request to
+                { name: 'John', age: 30 },  // Data to send with the POST request
+                function (response) {       // Callback function on success
+                    console.log('POST Response:', response);
+                    $('#container').html(response);
+                },
+                'json'                      // Optional: Expected response type
+            );
+        }
+
+        // Example: JSON request with $.getJSON()
+        function getJsonExample() {
+            $.getJSON('sample.json',   // The URL to request JSON data from
+                { key: 'value' },           // Data to send with the request (optional)
+                function (response) {       // Callback function on success
+                    console.log('JSON Response:', response);
+                    $('#container').html('Name: ' + response.name);
+                }
+            );
+        }
+
+        // Example: Load content into a container with .load()
+        function loadExample() {
+            $('#container').load('sample.txt',   // URL to fetch content from
+                { key: 'value' },                     // Data to send with the request (optional)
+                function (response, status, xhr) {    // Callback function on completion
+                    console.log('Load status:', status);
+                }
+            );
+        }
+    </script>
+
+    <!-- Buttons for testing individual examples -->
+    <button onclick="getExample()">GET Example</button>
+    <button onclick="postExample()">POST Example</button>
+    <button onclick="getJsonExample()">Get JSON Example</button>
+    <button onclick="loadExample()">Load Example</button>
+
+    <script>
+        function getJSON(){
+            $
+        }
+    </script>
+
+
+</body>
+</html>

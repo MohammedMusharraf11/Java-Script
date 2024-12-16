@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1</title>
+    <script>
+        function loadData(){
+            let xhr = new XMLHttpRequest
+            // Initialize the request by specifying the HTTP method (GET),
+            // the file to request ("sample.txt"), and whether the request should be asynchronous (true).
+            xhr.open("GET","sample.txt",true)
+            // Function to call when ever the ready state changes 
+            xhr.onreadystatechange=showdata;
+            xhr.responseType = "text";
+            xhr.send()
+        }   
+        
+        <!--
+            READY STATE:
+            0: Unintialized
+            1: Loading
+            2: Response Headers Received
+            3: Some Response Body Received
+            4: Req Completed 
+
+            STAUS:
+            200: "OK"
+            403: "FORBIDDEN"
+            404: "BANDI NOT FOUND"
+            
+        -->
+
+        function showdata(){
+            
+            if(this.readyState ==4 && this.status==200){
+                document.querySelector("div").innerHTML = this.responseText;
+            }
+        }
+    </script>
+</head>
+<body style="background-color: black; color: beige;">
+    <button onclick="loadData()">Load Data</button>
+    <div>The data is yet to load</div>
+</body>
+</html>

@@ -10,3 +10,10 @@ function add(a, b) {
 }
 
 module.exports.default = add;
+
+
+function sub(a,b){
+    return a-b;
+}
+
+module.exports.sub = sub;

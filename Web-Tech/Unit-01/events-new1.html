@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Event Notes:</title>
+</head>
+<body>
+        <div>
+            This is using Inline Events
+            <button id="1" onclick="alert('Button 1 was clicked BROSKII')">Button</button>
+        </div>
+        
+        <div>
+            This is using Event Handler Prop
+            <button id="2">Button</button>
+        </div>
+        
+        <div>
+            This is using Add Event Listener
+            <button id="3">Button</button>
+        </div>
+
+        <script>
+
+            // Type-2
+            const button2 = document.getElementById("2")
+            button2.onclick = function (){
+                alert("Hello Button-2 was clicked");
+            }
+
+            // Type-3 the og ONE
+            const button3 = document.getElementById("3")
+            button3.addEventListener("click",function(){
+                alert("Button three was clicked");
+            })
+        </script>
+
+</body>
+</html>

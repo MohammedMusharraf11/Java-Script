@@ -32,3 +32,17 @@ MongoClient.connect(url)
         console.log("Documents Fetched: ", res);
         client.close()
     })
+
+
+
+    const {MongoClient} = require("mongodb")
+    const url = "mongodb://127.0.0.1:27017"
+
+    let client
+
+    MongoClient.connect(url)
+        .then((connectedClient)=>{
+            client = connectedClient
+            const db = client.db("New")
+            const collection = db.collection("NEWNWN")
+        })

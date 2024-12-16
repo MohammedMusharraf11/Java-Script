@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1</title>
+    <script>
+        function loadData(){
+            let xhr = new XMLHttpRequest;
+            xhr.open("GET","sample.xml","true")
+            xhr.onreadystatechange = showdata;
+            xhr.responseType = "document";
+            xhr.send();
+        }
+
+        function showdata(){
+            if(this.readyState==4 && this.status==200){
+                // document.querySelector("div").innerHTML = this.response gives object object
+            document.querySelector(".srn").innerHTML = this.response.getElementsByTagName("srn")[0].firstChild.nodeValue;
+            }
+        }
+        
+    </script>
+</head>
+<body style="background-color: black; color: beige;">
+    <button onclick="loadData()">Load Data</button>
+    <div>The SRN IS:</div>
+    <div class="srn">Loading......</div>
+</body>
+</html>

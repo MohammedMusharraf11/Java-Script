@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="b1">Get Current Position</button>
+    <p>Location is not yet loaded</p>
+    <script>
+        var btn = document.getElementById("b1")
+        var output = document.querySelector("p")
+        btn.addEventListener("click",function (){
+            navigator.geolocation.getCurrentPosition(
+                function(position){
+                    let longitude = position.coords.longitude
+                    let latitude = position.coords.latitude
+                    output.innerHTML = `Your Current location is(Latitude: ${latitude}, Longitude: ${longitude})`
+                }
+            )
+        })
+    </script>
+</body>
+</html>

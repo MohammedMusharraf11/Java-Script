@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+    <!-- Notes: -->
+    <!-- 
+    What is Callback Hell? Chaining of callbacks can lead to callback hell
+    firstfunction(args,function(){
+        secondfunction(args,function(){
+            thirdfunction(args,function(){
+            })                          ==> Difficult to read and maintain code
+        })                              ==> If there is error in one function other functions t0o would be get affected and hence handling error will be complicated.
+    })  
+
+    PROMISE:
+        It supports two properties: 1.result 2.State
+        Promise object can be:
+        * Pending => Result is Undefined
+        * Fullfilled => Result is Value
+        * Rejected => Result is Error
+    -->
+    <script>
+        // Promise Constructor
+        let myPromise = new Promise(function(resolve,reject){
+            const x="apple";
+            const y="apple";
+
+            if(x==y){
+                resolve();
+            }else{
+                reject();
+            }
+        });
+
+        // Consuming Promise
+        myPromise
+            .then(function (){
+                console.log("String Matched");
+                
+            })
+            .catch(function (){
+                console.log("String didn't matched!!");
+                
+            })
+
+
+    // Promise Constructor
+		var date=new Promise(
+			function(resolve,reject){
+				setTimeout( function(){
+				weather=true;  //api call based on date and area
+				if(weather){
+					const dateDetails={
+						name:'Cubana Restaurent',
+						location:'55th street',
+						table:5
+					}
+						resolve(dateDetails)
+				}
+				else
+			
+					reject( new Error('Bad weather'))
+				}, 10000);
+			}
+			)
+            // Consuming Promise:
+			date
+				.then (function(details){
+					console.log(details);
+					console.log("Yay! Going on a date");
+				})
+							
+				.catch (function(error){
+					console.log(error.message)
+				
+				})
+		
+		
+	   </script>
+
+</head>
+<body style="background-color: black; color: beige;">
+    
+</body>
+</html>

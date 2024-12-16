@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1</title>
+    <script>
+        function loadData(){
+            let xhr = new XMLHttpRequest;
+            xhr.open("GET","Avengers.mp4","true")
+            xhr.onreadystatechange = showdata;
+            xhr.responseType = "blob";
+            xhr.send();
+        }
+
+        function showdata(){
+            if(this.readyState==4 && this.status==200){
+                // document.querySelector("div").innerHTML = this.response gives object object
+                let v = document.createElement("video")
+                v.src = URL.createObjectURL(this.response)
+                v.controls = true
+                document.querySelector("div").appendChild(v)
+            }
+        }
+        
+    </script>
+</head>
+<body style="background-color: black; color: beige;">
+    <button onclick="loadData()">Load Data</button>
+    <div>The data is yet to load</div>
+</body>
+</html>

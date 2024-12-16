@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object using Key:value
+        var emp2 = {
+            "firstname":"John",
+            "lname":"Doe",
+            "showname":function(){
+                document.write("The full name is "+ this.firstname + this.lname );
+            }
+        }
+        emp2.showname();
+
+        // Using Function constructor
+        function Employee(fname,lname){
+            this.firstname = fname,
+            this.lastname = lname,
+            this.showname = function(){
+                alert(this.firstname + this.lastname);
+            }
+        }
+        var emp5 = new Employee("John","Doe")
+        emp5.showname()
+
+        // Uh can add a new value this is way
+        Employee.prototype.id = null
+        emp5.id = 973
+        console.log(emp5);
+        
+    </script>
+</body>
+</html>

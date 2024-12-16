@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function loadData(){
+            myDiv = document.querySelector("div");
+            fetch("sample.txt")
+            .then(function(response){
+                return response.text(); //**** Its response.text() --> Method!!!
+            })
+            .then(function(text){
+                myDiv.innerHTML = text;
+            })
+            .catch(function(error){
+                console.log("Error: " + error);
+                
+            })
+        }
+
+        function loadVideo(){
+            myDiv = document.querySelector("div");
+            fetch("Avengers.mp4")
+            .then(function(response){
+                return response.blob();
+            })
+            .then(function(data){
+                mp4 = document.createElement("video")
+                myDiv.innerHTML = "The Video is loaded Enjoy ur Day"
+                mp4.controls = true;
+                mp4.src = URL.createObjectURL(data);
+                myDiv.appendChild(mp4);
+            })
+            .catch(function(error){
+					console.log(error.message);
+				})
+        }
+
+        function loadJSON(){
+            myDiv = document.querySelector("div");
+            fetch("sample.json")
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(obj){
+                myDiv.innerHTML = JSON.stringify(obj);
+            })
+        }
+
+    </script>
+</head>
+<body style="background-color: black; color: beige;">
+    <div>The text/Video is yet to be loaded </div>
+    <button id="load-data" onclick="loadData()">Load Data</button>
+    <button id="load-video" onclick="loadVideo()">Load Video</button>
+    <button id="load-json" onclick="loadJSON()">Load Video</button>
+    
+</body>
+</html>

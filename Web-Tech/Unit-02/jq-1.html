@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+    <script>
+        
+        $(document).ready(function (){
+            $("#p11").click(function (){
+                $("#p1").hide();
+            })
+        });
+
+        $(document).ready(function (){
+            $("#add").click(function (){
+                newli = document.createElement("li")
+                $(newli).html("AFLL")
+                $("ul").append(newli)
+            })
+            $("#hideall").click(function(){
+                $("ul").hide("slow");
+            })
+            $("#showall").click(function(){
+                $("ul").show("slow");
+            })
+        })
+
+
+
+    </script>
+</head>
+<body style="background-color: black; color: beige;">
+    
+    <p id="p1">I am visible now</p>
+    <button id="p11">Click Me</button>
+
+    <p>CSE Subjects</p>
+    <ul>
+        <li>DDCO</li>
+        <li>Web Tech</li>
+        <li>Data Structures and Algos</li>
+    </ul>
+    <button id="add">Click to Append</button>
+    <button id="hideall">Click to Hide All</button>
+    <button id="showall">Click to Show All</button>
+
+</body>
+</html>

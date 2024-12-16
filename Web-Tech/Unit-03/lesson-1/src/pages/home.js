@@ -15,6 +15,8 @@ function Home() {
         <li>Go for /events for Events and Counter function page</li>
         <li>Go for /forms for Forms page</li>
         <li>Go for /hooks for Hooks page</li>
+        <li>Go for /digitalClock for Hooks page</li>
+        <li>Go for /mc for Hooks page</li>
       </ul>
     </div>
   )

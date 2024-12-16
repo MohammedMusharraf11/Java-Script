@@ -1,0 +1,21 @@
+{
+    "6-TH-SEM-STUDENTS":{
+        "STUDENTS": [
+            {
+                "name":"John",
+                "Id":"300",
+                "GPA": "8.9"
+            },
+            {
+                "name":"John",
+                "Id":"300",
+                "GPA": "8.9"
+            },
+            {
+                "name":"John",
+                "Id":"300",
+                "GPA": "8.9"
+            }
+        ]
+    }
+}

@@ -1,7 +1,9 @@
-const {myDate,default:add} = require('./test.js');
+const {myDate,default:add,sub} = require('./test.js');
 
 console.log("Date is: ", myDate());
 console.log("Addition is: ", add(5, 6));
+console.log("Subtraction is: ", sub(10,2));
+
 
 
 //  

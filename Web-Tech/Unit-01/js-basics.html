@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript!!</title>
+</head>
+<body>
+    <script>
+        // This is how you can add html using JS.
+        document.write("Hello World!!")
+    </script>
+    <p>This is my first JS Program</p>
+    
+    <script>
+        document.write("Welcome to web Technologies!!")
+    </script>
+
+    <!-- Data types: -->
+     <script>
+        let x = null // null
+        let y; // Undefined
+        let z = true; // Boolean
+        let a=10.22   // number
+        let b="john"    //string
+        // var num = 123.789;
+
+        let num=Number("10.22");
+        console.log(typeof num);
+        // ********************
+        let num1="10.22"-1;
+        console.log(num1 + " is type of: "+ typeof num1);
+
+        let num2 = parseInt("10.22")
+        console.log("The value of num2 is: " + num2 + "     and it is typeof: "+ typeof num2);
+        
+        let num3 = parseInt("123.456","8"); // To the base 8
+        console.log("The value of num3 is: " + num3 + " and it is typeof: "+ typeof num2);
+
+        // Loops
+        var obj=new Object();
+			 obj.name="vikram"
+			 obj.age=20;
+
+            //  obj = {name:"Vikram", age:"20"}
+			 for (i in obj) // Here I => keys of object and obj[i] => Values
+			 document.write(i+"=>"+obj[i]+"<br>");
+
+        // Date
+        var date = new Date(2024,11,14)  // Months are 0 based index so 11 => dec and 1 or 12 => Jan
+        document.write(date)
+
+
+        function add(a,b){
+            return a+b;
+        }
+
+        var ref = add;
+        var ref=function(a,b){    //Anonymous functions
+			return a+b;
+			}
+			
+		console.log(ref(5,8, 20,30));
+		console.log(ref(5));   
+        
+        
+     </script>
+     
+     <script>
+        var ref = function(...args){
+            var s = 0;
+            for (i in args){
+                s += args[i];
+            }
+            return s
+
+        }
+
+        console.log(ref(1,2,3,4,5,6,7,8,10));
+        
+     </script>
+</body>
+</html>

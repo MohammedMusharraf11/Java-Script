@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+    <script>
+     
+     $(document).ready(function(){
+		$("p").on("click", function(event){
+		$(event.target).css("color","blue").html("I was Clicked");
+		});
+		$("p").mouseover (function(){
+			$("ul").slideToggle("slow");
+			if($("button").attr("visible"))
+			  $("button").hide().html("Hidden");
+			else
+				$("button:first").show().html("Show");
+		});
+    });
+
+    $(document).ready(function(){
+        $("#display").click(function (){
+            $("ul").hide("slow")
+            $("#display").add.attr("hidden")
+        if($("#display").attr("hidden"))
+            $("ul").show("slow")
+            
+        })
+    }); 
+
+
+
+
+    $(document).ready(function (){
+        $(".btn1").click(function(){
+            $(".slide").slideDown("slow");
+        });
+        $(".btn2").click(function(){
+            $(".slide").slideUp("slow");
+        })
+        $("#addborder").click(function(){
+            $("img").css("border","5px solid red");
+        })
+    })
+    </script>
+</head>
+<body style="background-color: black; color: beige;">
+    <div></div>
+		<p> Subjects</p>
+		<ul>
+				<li> Data Structures </li>
+				<li class="g1"> Web Technologies</li>
+				<li > Data Science</li>
+				<li> AFLL </li>
+		</ul>
+		<button>Click</button>
+
+        <button id="display">VISIBLE or Invisible </button>
+		</div>
+        <button class="btn1">Slide down</button>
+        <button class="btn2">Slide up</button>
+                <br><br>
+                <div class="slide">
+                    
+                    <div>PES</div>
+                    <div>UNIVERSITY</div>
+                    <div>BANGALORE</div>
+                </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_083GKgW6Bo2X-Re7EYuIRTDx9KqAsa1kkA&s" alt="">
+        <button id="addborder">Click Me to add border</button>
+</body>
+</html>

@@ -1,4 +1,4 @@
-let x = 16 + "Volvo";
+    let x = 16 + "Volvo";
 // output 16Volvo
 //  when adding a number to string js treats entire as string
 

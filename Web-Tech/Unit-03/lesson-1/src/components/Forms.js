@@ -9,7 +9,8 @@ class Forms extends React.Component{
         this.state = {
             name: "",
             email: "",
-            password: ""
+            password: "",
+            srn: ""
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,13 +19,19 @@ class Forms extends React.Component{
         this.setState({
             [event.target.name]: event.target.value,
             [event.target.email]: event.target.value,
-            [event.target.password]: event.target.value
+            [event.target.password]: event.target.value,
+            [event.target.srn]: event.target.value
 
         });
     }
     handleSubmit = function(event){
         event.preventDefault();
         console.log(this.state);
+        let v = document.getElementById("form");
+        let name = document.createElement("h3");
+        name.innerHTML = "Name: " + this.state.name;
+        v.appendChild(name);
+
     }
 
 
@@ -32,7 +39,7 @@ class Forms extends React.Component{
         return(
             <>
             <form onSubmit={this.handleSubmit}>
-                <div>
+                <div id="form">
                 <label>
                     Name:
                     <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
@@ -48,6 +55,10 @@ class Forms extends React.Component{
                 <label>
                     Password:
                     <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
+                </label>
+                <label>
+                    SRN:
+                    <input type="text" name="srn" value={this.state.srn} onChange={this.handleChange}/>
                 </label>
                 </div>
                 <div>

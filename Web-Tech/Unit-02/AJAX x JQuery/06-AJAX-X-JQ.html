@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        <!--
+            JQUERY AJAX METHODS:
+            1. $.ajax
+            2. $.get
+            3. $.post
+            4. $.load
+
+            In a single method call, the entire functionality of making an AJAX call using XMLHttpRequest and updating the page can be achieved
+            
+            
+            
+            
+            -->
+        function getData(){
+            $.ajax({
+					url:'sample.txt',
+					method:'get',
+					success: function (result){
+						$("div").html(result);
+					}
+				})
+
+
+            // $("div").load("sample.txt",
+            //     function(result,status,xhr){
+            //         console.log("status:"+ status);
+                    
+            //     }
+            // )
+        }
+    </script>
+</head>
+<body style="background-color: black; color: beige;">
+    <button onclick="getData()">Load Data</button>
+    <div>The data is yet to load</div>
+
+    <script>
+        function loadData(){
+            $.ajax({
+                method:"get",
+                url:"sample.txt",
+                success:function(result){
+                    $("div").html=result;
+                }
+            })
+        }
+    </script>
+
+
+</body>
+</html>
+
